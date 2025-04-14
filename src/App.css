@@ -1,14 +1,19 @@
-/* App.css */
+
 body {
   font-family: sans-serif;
   margin: 0;
   background-color: #fff; /* White background */
   color: #333; /* Dark grey text */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Align items to the top */
+  min-height: 100vh; /* Ensure full viewport height */
 }
 
 .expense-tracker-container {
-  max-width: 1200px;
-  margin: 20px auto;
+  max-width: 960px; /* Adjust for typical tablet width */
+  width: 95%; /* Take up most of the tablet width with some margin */
+  margin: 20px; /* Add some margin around the container */
   background-color: #f0f0f0; /* Light grey container background */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -31,12 +36,14 @@ header h1 {
 .main-content {
   display: flex;
   padding: 20px;
+  flex-direction: column; /* Stack sections for better tablet responsiveness */
 }
 
 .add-expense-section {
-  flex: 0 0 300px;
-  padding-right: 20px;
-  border-right: 1px solid #ccc;
+  width: 100%; /* Full width on tablets */
+  padding-right: 0;
+  border-right: none;
+  margin-bottom: 20px;
 }
 
 .add-expense-section h2 {
@@ -78,6 +85,7 @@ header h1 {
   cursor: pointer;
   font-size: 1em;
   transition: background-color 0.3s ease;
+  width: 100%; /* Full width button on tablets */
 }
 
 .add-expense-section button:hover {
@@ -85,8 +93,8 @@ header h1 {
 }
 
 .expense-list-section {
-  flex-grow: 1;
-  padding-left: 20px;
+  width: 100%; /* Full width on tablets */
+  padding-left: 0;
 }
 
 .controls {
@@ -94,6 +102,7 @@ header h1 {
   gap: 15px;
   margin-bottom: 20px;
   align-items: center;
+  flex-direction: column; /* Stack controls on smaller screens */
 }
 
 .search-bar input[type="text"] {
@@ -108,6 +117,8 @@ header h1 {
 .sort-buttons {
   display: flex;
   gap: 10px;
+  width: 100%; /* Full width for sort buttons */
+  justify-content: center; /* Center sort buttons */
 }
 
 .sort-buttons button {
@@ -119,6 +130,7 @@ header h1 {
   cursor: pointer;
   font-size: 0.9em;
   transition: background-color 0.3s ease;
+  flex-grow: 1; /* Distribute space evenly among buttons */
 }
 
 .sort-buttons button.active {
@@ -170,6 +182,9 @@ header h1 {
   cursor: pointer;
   font-size: 0.9em;
   transition: background-color 0.3s ease;
+  width: 80px; /* Adjust delete button width */
+  display: block;
+  margin: 5px auto; /* Center delete button in cell */
 }
 
 .expense-list-section table .delete-button:hover {
@@ -180,19 +195,32 @@ header h1 {
   border-bottom: none;
 }
 
-@media (max-width: 768px) {
+/* Media query for larger tablets (landscape) */
+@media (min-width: 768px) {
   .main-content {
-    flex-direction: column;
+    flex-direction: row; /* Keep sections side-by-side on larger screens */
   }
 
   .add-expense-section {
-    width: 100%;
-    padding-right: 0;
-    border-right: none;
-    margin-bottom: 20px;
+    width: 300px;
+    padding-right: 20px;
+    border-right: 1px solid #ccc;
+    margin-bottom: 0;
   }
 
   .expense-list-section {
-    padding-left: 0;
+    padding-left: 20px;
+  }
+
+  .controls {
+    flex-direction: row; /* Keep controls in a row */
+  }
+
+  .sort-buttons {
+    justify-content: flex-start; /* Align sort buttons to the left */
+  }
+
+  .add-expense-section button {
+    width: auto; /* Auto width for button on larger screens */
   }
 }
