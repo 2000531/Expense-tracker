@@ -1,0 +1,198 @@
+/* App.css */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #fff; /* White background */
+  color: #333; /* Dark grey text */
+}
+
+.expense-tracker-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #f0f0f0; /* Light grey container background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ccc; /* Subtle border */
+}
+
+header {
+  background-color: #222; /* Dark grey/black header */
+  color: #fff; /* White header text */
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #e74c3c; /* Red accent */
+}
+
+header h1 {
+  margin-bottom: 5px;
+}
+
+.main-content {
+  display: flex;
+  padding: 20px;
+}
+
+.add-expense-section {
+  flex: 0 0 300px;
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.add-expense-section h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #222; /* Dark grey heading */
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+}
+
+.add-expense-section .form-group {
+  margin-bottom: 15px;
+}
+
+.add-expense-section label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-size: 0.9em;
+}
+
+.add-expense-section input[type="text"],
+.add-expense-section input[type="number"],
+.add-expense-section input[type="date"] {
+  width: calc(100% - 12px);
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+.add-expense-section button {
+  background-color: #e74c3c; /* Red button */
+  color: #fff; /* White button text */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.add-expense-section button:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
+
+.expense-list-section {
+  flex-grow: 1;
+  padding-left: 20px;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.search-bar input[type="text"] {
+  width: calc(100% - 12px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+.sort-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.sort-buttons button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8; /* Light grey sort buttons */
+  color: #333;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.sort-buttons button.active {
+  background-color: #ddd; /* Slightly darker when active */
+}
+
+.sort-buttons button:hover {
+  background-color: #eee;
+}
+
+.expense-list-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border: 1px solid #ccc; /* Table border */
+}
+
+.expense-list-section th,
+.expense-list-section td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.expense-list-section th {
+  background-color: #333; /* Dark grey table header */
+  color: #fff; /* White header text */
+  font-weight: bold;
+}
+
+.expense-list-section tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Light grey even rows */
+}
+
+.expense-list-section tbody tr:hover {
+  background-color: #eee;
+}
+
+.expense-list-section tbody td {
+  color: #333;
+}
+
+.expense-list-section table .delete-button {
+  background-color: #e74c3c; /* Red delete button */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.expense-list-section table .delete-button:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
+
+.expense-list-section tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .add-expense-section {
+    width: 100%;
+    padding-right: 0;
+    border-right: none;
+    margin-bottom: 20px;
+  }
+
+  .expense-list-section {
+    padding-left: 0;
+  }
+}
